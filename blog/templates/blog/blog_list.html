@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+    我的网站
+{% endblock %}
+{% block nav_blog_active %}active{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for blog in blogs %}
+                    <a href="{% url 'blog_detail' blog.pk %}"><h3>{{ blog.title }}</h3></a>
+                    <p>{{ blog.content|truncatechars:30 }}</p>
+                {% empty %}
+                    <p>--暂无博客，敬请期待--</p>
+                {% endfor %}
+                <P>一共有{{ blogs|length }}篇博客</P>
+            </div>
+            <div class="col-md-4">
+                <h4>博客分类</h4>
+                {% for  blog_type in blog_types%}
+                    <a href="{% url 'blog_list' %}">{{ blog.type_name }}</a>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+
