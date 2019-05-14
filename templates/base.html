@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="{% url 'home' %}">
-                个人博客网
+                个人博客网站
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
                 <span class="icon-bar"></span>
@@ -31,7 +31,7 @@
                     <a href="{% url 'home' %}">首页</a>
                 </li>
                 <li class="{% block nav_blog_active %}{% endblock %}">
-                    <a href="{% url 'blog_list' %}">博客</a>
+                    <a href="{% url 'blog_list' %}">播客</a>
                 </li>
             </ul>
         </div>
